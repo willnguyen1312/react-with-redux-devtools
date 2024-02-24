@@ -3,8 +3,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type {} from "@redux-devtools/extension";
 
-const isDEV = import.meta.env.MODE !== "production";
-
 type Message = {
   type: string;
   payload?: any;
@@ -98,7 +96,7 @@ function setupDevtoolsImplementation<T>({
   };
 }
 
-export const setupDevtools = isDEV ? setupDevtoolsImplementation : undefined;
+export const setupDevtools = setupDevtoolsImplementation;
 
 const parseJsonThen = <T>(
   stringified: string,
