@@ -82,7 +82,7 @@ export default function App() {
 
   const state = React.useSyncExternalStore(
     storeRef.current.subscribe,
-    storeRef.current.getState
+    storeRef.current.getState,
   );
 
   // debugger;

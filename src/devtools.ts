@@ -36,7 +36,7 @@ function setupDevtoolsImplementation<T>({
   (
     connection as unknown as {
       subscribe: (
-        listener: (message: Message) => void
+        listener: (message: Message) => void,
       ) => (() => void) | undefined;
     }
   ).subscribe((message) => {
@@ -100,7 +100,7 @@ export const setupDevtools = setupDevtoolsImplementation;
 
 const parseJsonThen = <T>(
   stringified: string,
-  callBack: (parsed: T) => void
+  callBack: (parsed: T) => void,
 ) => {
   let parsed: T | undefined;
   try {
